@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidential Confessions - NK College Masquerade Gala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Special+Elite&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, #2a0808 0%, #0a0a0a 60%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, .title-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .typewriter-text {
+            font-family: 'Special Elite', cursive;
+            line-height: 1.6;
+        }
+
+        .file-card {
+            background: linear-gradient(145deg, #161616, #1a1a1a);
+            border: 1px solid #333;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 10px 25px rgba(0,0,0,0.8);
+            border-color: #551a1a;
+        }
+
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b0000, #ff4c4c);
+            opacity: 0.7;
+        }
+
+        .stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: rgba(139, 0, 0, 0.04);
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            letter-spacing: 0.5rem;
+            font-family: 'Cinzel', serif;
+            border: 8px solid rgba(139, 0, 0, 0.04);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="max-w-6xl mx-auto mb-12 text-center border-b border-red-900/30 pb-8 relative">
+        <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
+            <span class="text-9xl">🎭</span>
+        </div>
+        <div class="relative z-10">
+            <h2 class="text-red-600 font-bold tracking-widest text-sm md:text-base uppercase mb-2">Internal Investigation Database</h2>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">NK COLLEGE MASQUERADE GALA</h1>
+            <div class="inline-block bg-red-900/20 border border-red-800/50 px-6 py-2 rounded-full backdrop-blur-sm">
+                <h3 class="text-xl md:text-2xl text-red-500 font-bold tracking-wider">CONFIDENTIAL CONFESSION FILES</h3>
+            </div>
+            <p class="mt-6 text-neutral-400 max-w-2xl mx-auto text-sm md:text-base">
+                <span class="text-red-500 font-semibold">MISSION LOG:</span> The following statements have been transcribed directly from the suspect interviews. The contents are strictly classified. Do not alter or distribute these records.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        <!-- Suspect 01 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#01</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Leo Fernandez</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Student Club President</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor told me club funding would be cut tomorrow morning. I was angry — I won’t deny that. But I built these events. I would never destroy the college’s reputation by harming its biggest donor.</p>
+                    <p>Yes, I was near the drinks station several times. I was coordinating service timing with catering staff. I wrote that note — “It ends tonight.” It was about confronting him publicly after his speech.</p>
+                    <p>At 11:45 PM, I was in the lighting booth. The technical team can confirm that.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: LF-001</span>
+            </div>
+        </article>
+
+        <!-- Suspect 02 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#02</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Diana Carter</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Head of PR</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor mentioned making “an unscripted addition” to his speech. That alarmed me. My job is to manage fallout, not cause it.</p>
+                    <p>The vial found in my bag is prescribed medication. Forensics will verify that.</p>
+                    <p>I was near the media entrance when he collapsed. I did not go near the podium once the program began.</p>
+                    <p>If Victor planned to reveal something damaging, it would have affected many people — not just me.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: DC-002</span>
+            </div>
+        </article>
+
+        <!-- Suspect 03 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#03</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Dr. Aris Malhotra</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Rival Donor</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor embarrassed me. That much is true.</p>
+                    <p>Yes, I stepped out during the cocktail hour. I needed air. I briefly spoke to the caterer about service delays — nothing more.</p>
+                    <p>My nephew Raj being found unconscious is deeply troubling. I would never risk his safety.</p>
+                    <p>Humiliation is not justification for murder.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: AM-003</span>
+            </div>
+        </article>
+
+        <!-- Suspect 04 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#04</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Maya Srinivasan</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Senior CS Student</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor’s company patented my algorithm without credit. I confronted him weeks ago.</p>
+                    <p>I attended the gala hoping to document proof of my original work. That is why I was near the server corridor earlier in the evening.</p>
+                    <p>The USB drive contains my timestamped project files. Nothing else.</p>
+                    <p>If I wanted revenge, I would pursue it legally. Destroying him publicly would only hurt my own credibility.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: MS-004</span>
+            </div>
+        </article>
+
+        <!-- Suspect 05 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#05</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Julian Mercer</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Event Caterer</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor’s corporation holds my business in debt. But poisoning a client at my own event would guarantee bankruptcy.</p>
+                    <p>The podium water pitcher was filled during stage setup before the main program began. After that, my team focused on meal service.</p>
+                    <p>Yes, I was alone in the prep kitchen briefly — plating VIP service requires precision.</p>
+                    <p>I never returned to the podium area after setup.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: JM-005</span>
+            </div>
+        </article>
+
+        <!-- Suspect 06 -->
+        <article class="file-card p-6 md:p-8 rounded-lg flex flex-col xl:col-span-1 md:col-span-2 xl:col-start-auto">
+            <div class="stamp">CONFIDENTIAL</div>
+            <div class="content-layer flex-grow">
+                <div class="flex justify-between items-start mb-4 border-b border-neutral-700 pb-4">
+                    <div>
+                        <span class="text-red-500 font-bold text-lg block title-font">#06</span>
+                        <h2 class="text-2xl font-bold text-white title-font">Prof. Adrian Vance</h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-neutral-800 text-neutral-400 text-xs px-3 py-1 rounded-full border border-neutral-600 uppercase tracking-wider">Senior Faculty — CS</span>
+                    </div>
+                </div>
+                <div class="typewriter-text text-neutral-300 space-y-4 text-sm md:text-base">
+                    <p>Victor intended to dismantle twenty-eight years of academic foundation and replace it with corporate training modules. That disagreement was philosophical, not personal.</p>
+                    <p>We spoke during the cocktail hour. It was a firm discussion, nothing more.</p>
+                    <p>Afterward, I returned to the faculty lounge. I often walk the building when thinking, particularly past the research wing and server corridor. It helps me clear my mind.</p>
+                    <p>If my office key was found there, I must have dropped it unintentionally.</p>
+                    <p>As for the toxin — I’ve heard speculation. Botanical compounds are studied widely across disciplines. Knowledge of them is hardly uncommon in an academic institution.</p>
+                    <p>I did not approach the stage once the formal program began.</p>
+                </div>
+            </div>
+            <div class="content-layer mt-6 pt-4 border-t border-neutral-800 text-xs text-neutral-500 flex justify-between items-center">
+                <span>STATUS: RECORDED</span>
+                <span>FILE: AV-006</span>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer / Action Area -->
+    <footer class="max-w-7xl mx-auto mt-12 text-center pb-8">
+        <div class="inline-flex items-center gap-2 text-neutral-500 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Secure connection established. End of files.
+        </div>
+    </footer>
+
+    <!-- Interactive JS to add a small hover/focus effect to the page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.file-card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Slight visual feedback to show you are "investigating" a file
+                    cards.forEach(c => c.style.borderColor = '#333');
+                    card.style.borderColor = '#dc2626'; // Red selection
+                });
+            });
+        });
+    </script>
+</body>
+</html>
