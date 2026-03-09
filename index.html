@@ -79,18 +79,49 @@
     </button>
 
     <script>
-        function checkPassword() {
-            var password = prompt("Enter Password:");
 
-            if (password === "lsabella cruz") {
-                window.location.href = "mystery.html";
-            } else {
-                alert("Incorrect Password!");
-            }
-        }
-    </script>
+let messages = [
+"CLUE: Check the Security Logs carefully.",
+"HINT: The autopsy report reveals the real cause of death.",
+"NOTE: Someone altered the access logs before midnight."
+];
+
+let index = 0;
+
+function checkPassword() {
+
+    // show one of the messages
+    let message = messages[index];
+
+    // change message index
+    index++;
+    if(index >= messages.length){
+        index = 0;
+    }
+
+    // password prompt with message
+    let password = prompt(message + "\n\nEnter Password:");
+
+    if (password && password.toLowerCase() === "isabella cruz") {
+        window.location.href = "mystery.html";
+    } 
+    else {
+        alert("Incorrect Password!");
+    }
+}
+
+// change message every 5 minutes
+setInterval(function(){
+    index++;
+    if(index >= messages.length){
+        index = 0;
+    }
+}, 300000); // 5 minutes
+
+</script>
 </body>
 </html>
+
 
 
 
