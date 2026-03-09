@@ -119,8 +119,52 @@ setInterval(function(){
 }, 300000); // 5 minutes
 
 </script>
+<script>
+document.addEventListener("visibilitychange", function() {
+
+    if (document.hidden) {
+        alert("Warning: Switching tabs is not allowed during investigation!");
+    }
+
+});
+</script>
+<script>
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
+</script>
+    <script>
+document.onkeydown = function(e) {
+
+if (e.keyCode == 123) {
+return false; // F12
+}
+
+if (e.ctrlKey && e.key == "u") {
+return false; // View source
+}
+
+if (e.ctrlKey && e.key == "c") {
+return false; // Copy
+}
+
+};
+</script>
+<script>
+function startFullscreen() {
+
+let elem = document.documentElement;
+
+if (elem.requestFullscreen) {
+elem.requestFullscreen();
+}
+
+}
+</script>
+    
 </body>
 </html>
+
 
 
 
