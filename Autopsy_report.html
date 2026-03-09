@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Coroner's Report — Victor Sterling</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .page {
+    width: 780px;
+    background-color: #f0ebe0;
+    background-image:
+      radial-gradient(ellipse 600px 400px at 50% 0%,   rgba(180,160,120,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 300px 200px at 10% 30%,  rgba(140,110,70,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 250px 180px at 90% 70%,  rgba(120,90,50,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 400px 150px at 50% 100%, rgba(100,80,40,0.10) 0%, transparent 70%);
+    border: 1px solid #c8b89a;
+    box-shadow:
+      0 0 0 4px #e0d0b0,
+      0 0 0 6px #b8a888,
+      10px 14px 50px rgba(0,0,0,0.55),
+      inset 0 0 120px rgba(180,150,100,0.08);
+    padding: 48px 56px 52px;
+    position: relative;
+    font-family: 'Courier Prime', monospace;
+  }
+
+  /* Paper texture overlay */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .page > * { position: relative; z-index: 1; }
+
+  /* ── HOMICIDE STAMP ── */
+  .stamp-wrap {
+    position: absolute;
+    top: 32px;
+    right: 44px;
+    transform: rotate(4deg);
+    z-index: 20;
+  }
+
+  .stamp {
+    border: 3px solid rgba(160, 30, 30, 0.75);
+    padding: 6px 14px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .stamp-line {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgba(160, 30, 30, 0.80);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    margin-bottom: 28px;
+    padding-right: 100px; /* avoid stamp overlap */
+  }
+
+  .doc-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  .doc-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    color: #3a3a3a;
+    letter-spacing: 1px;
+    line-height: 1.7;
+  }
+
+  hr.rule {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 18px 0;
+  }
+
+  hr.rule.thick {
+    border-top: 2px solid #666;
+  }
+
+  /* ── SUBJECT INFO ── */
+  .subject-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    margin-bottom: 6px;
+  }
+
+  .subject-field {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+
+  .subject-field strong {
+    font-weight: 700;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+
+  .section-body {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: #222;
+  }
+
+  .section-body p {
+    margin-bottom: 8px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: #222;
+  }
+
+  .bullet-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #222;
+  }
+
+  .bullet-item .star {
+    flex-shrink: 0;
+    font-weight: 700;
+    color: #333;
+    margin-top: 1px;
+  }
+
+  .bullet-item .content {
+    flex: 1;
+  }
+
+  b, strong {
+    font-weight: 700;
+    color: #111;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  /* ── CONCLUSION BOX ── */
+  .conclusion-box {
+    border: 1px solid #888;
+    padding: 14px 18px;
+    margin-top: 10px;
+    background: rgba(0,0,0,0.025);
+    position: relative;
+  }
+
+  .box-number {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: #888;
+    color: #f0ebe0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    line-height: 1.4;
+  }
+
+  .conclusion-box p {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: #222;
+    margin-top: 8px;
+  }
+
+  /* Pending analysis tag */
+  .pending-tag {
+    display: inline-block;
+    font-family: 'Courier Prime', monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #8b4a00;
+    border: 1px solid #8b4a0055;
+    background: rgba(139,74,0,0.07);
+    padding: 1px 8px;
+    margin-left: 4px;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-field {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.8;
+  }
+
+  .signature-line {
+    border-bottom: 1px solid #666;
+    width: 180px;
+    margin-bottom: 3px;
+    height: 22px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HOMICIDE STAMP -->
+  <div class="stamp-wrap">
+    <div class="stamp">
+      <span class="stamp-line">Homicide</span>
+      <span class="stamp-line">Confirmed</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="doc-title">Official Coroner's Report</div>
+    <div class="doc-sub">
+      NK College County Medical Examiner's Office<br>
+      Case Number: 2026-03-01-V5
+    </div>
+  </div>
+
+  <hr class="rule thick">
+
+  <!-- SUBJECT INFO -->
+  <div class="subject-grid">
+    <div class="subject-field"><strong>Subject:</strong> STERLING, Victor</div>
+    <div class="subject-field"><strong>Age:</strong> 61</div>
+    <div class="subject-field"><strong>Time of Death:</strong> 23:45 / 11:45 PM</div>
+    <div class="subject-field"><strong>Location:</strong> NK College Grand Hall</div>
+  </div>
+
+  <hr class="rule thick">
+
+  <!-- SUMMARY OF FINDINGS -->
+  <div class="section">
+    <div class="section-title">Summary of Findings</div>
+    <div class="section-body">
+      <p>The deceased, Victor Sterling, was diagnosed with <strong>diabetes mellitus</strong> (high diabetic), hypertension (high blood pressure), and heart disease. Victor was on regular medication including tablets to manage blood sugar and blood pressure, required insulin shots, and frequently underwent tests to monitor his health. Victor was brought in following a sudden collapse at the NK College Grand Hall. Initial on-scene reports suggested acute myocardial infarction (heart attack). However, extensive forensic analysis indicates a <strong><u>highly sophisticated, unnatural cause of death.</u></strong></p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- EXTERNAL EXAMINATION -->
+  <div class="section">
+    <div class="section-title">External Examination</div>
+
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">The subject is a well-nourished adult male.</span>
+    </div>
+
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">No signs of blunt force trauma, strangulation, or defensive wounds.</span>
+    </div>
+
+    <!-- CHANGE 2: Softened dermal anomaly -->
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">
+        <strong>DERMAL ANOMALY:</strong> Minor surface abrasions were noted across both hands, consistent with normal social contact during a large formal event — handshakes, brief physical contact, and so forth. One slightly more pronounced mark was noted on the <strong>right dorsal metacarpal</strong> (the <strong>back of the right hand</strong>), though this is not unusual given the subject's diabetic skin condition, which commonly produces increased skin fragility and delayed surface healing.
+      </span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- INTERNAL EXAMINATION & TOXICOLOGY -->
+  <div class="section">
+    <div class="section-title">Internal Examination &amp; Toxicology</div>
+
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">The heart exhibits signs of <strong>massive, instantaneous catastrophic failure.</strong></span>
+    </div>
+
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">The stomach contents show water and standard catered hors d'oeuvres. <strong>No oral poisons were detected</strong> in the digestive tract.</span>
+    </div>
+
+    <!-- CHANGE 4: False lead toward oral ingestion -->
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content">
+        <strong>ORAL RESIDUE NOTE:</strong> Trace botanical residue detected in the oral cavity consistent with hors d'oeuvres consumed during the cocktail hour. While no active poison compound was confirmed orally, the residue shares a partial chemical signature with the bloodstream toxin. <span class="pending-tag">Further Analysis Pending</span>
+      </span>
+    </div>
+
+    <div class="bullet-item">
+      <span class="star">*</span>
+      <span class="content"><strong>TOXICOLOGY RESULTS:</strong> Blood samples reveal the presence of a rare, <strong>synthesized botanical neurotoxin (class IV)</strong> directly within the bloodstream.</span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- PATHOLOGIST'S NOTES -->
+  <div class="section">
+    <div class="section-title">Pathologist's Notes on Toxin Profile</div>
+    <div class="section-body">
+      <!-- CHANGE 1: Range instead of fixed 120 minutes -->
+      <p>The identified neurotoxin is unique for its variable incubation period. The compound's documented incubation window under standard physiological conditions is consistent with prior Class IV case studies, <strong>ranging between 108 and 134 minutes</strong> depending on the subject's metabolic rate, body mass, and hydration levels. Victor's documented medical conditions — diabetes and hypertension — may have influenced the upper or lower boundary of this range. Once activated, the compound triggers complete and immediate cardiac arrest with no secondary warning symptoms.</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- OFFICIAL CAUSE OF DEATH -->
+  <div class="section">
+    <div class="section-title">Official Cause of Death</div>
+
+    <!-- CHANGE 3: Range instead of exact 9:45 PM -->
+    <div class="conclusion-box">
+      <span class="box-number">1</span>
+      <p>Based on the physiological profile and documented incubation range, lethal exposure is estimated to have occurred between <strong>21:31 and 22:17 (9:31 PM – 10:17 PM)</strong>. The precise time of exposure cannot be determined without additional toxicological data. Cause of death is confirmed as <strong>acute cardiac arrest induced by a synthesized Class IV botanical neurotoxin</strong>, administered via non-oral route. Manner of death: <strong><u>Homicide.</u></strong></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-field">
+      Report Filed: March 1, 2026<br>
+      Classification: CONFIDENTIAL<br>
+      Case: 2026-03-01-V5
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
