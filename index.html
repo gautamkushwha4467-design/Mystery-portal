@@ -1,164 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <link rel="stylesheet" type="text/css" href="rain.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            margin: 0;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mystery Portal - Victor Sterling</title>
+        .button-container {
+            display: flex;
+        }
 
-<style>
+        .button-container:first-child {
+            margin-bottom: 10px;
+        }
 
-body{
-    margin:0;
-    font-family:"Courier New", monospace;
-    background:#0f1720;
-    color:#e2e8f0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+        .image-button {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .normal-button {
+            margin-top: 20px;
+    
+        }
+
+        /* Blue */
+.info {
+  border-color: orange;
+  color: orange;
+
 }
 
-h1{
-    margin-top:30px;
-    text-align:center;
-    letter-spacing:2px;
-    color:#f97316;
+.info:hover {
+  background: orange;
+  color: white;
 }
-
-.dashboard{
-    margin-top:40px;
-    display:grid;
-    grid-template-columns: repeat(3,220px);
-    gap:25px;
-}
-
-.card{
-    background:#111827;
-    border:1px solid #374151;
-    border-radius:10px;
-    padding:15px;
-    text-align:center;
-    transition:0.3s;
-    box-shadow:0 0 10px rgba(0,0,0,0.6);
-}
-
-.card:hover{
-    transform:scale(1.05);
-    border-color:#f97316;
-    box-shadow:0 0 20px rgba(249,115,22,0.6);
-}
-
-.card img{
-    width:120px;
-    height:120px;
-}
-
-.card p{
-    margin-top:10px;
-    font-size:15px;
-}
-
-.start-btn{
-    margin-top:40px;
-    padding:12px 30px;
-    font-size:18px;
-    border:2px solid #f97316;
-    background:transparent;
-    color:#f97316;
-    cursor:pointer;
-    border-radius:6px;
-    transition:0.3s;
-}
-
-.start-btn:hover{
-    background:#f97316;
-    color:white;
-}
-
-.footer{
-    margin-top:30px;
-    font-size:13px;
-    color:#6b7280;
-}
-
-</style>
-
+   
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mystery Portal</title>
 </head>
-
-
 <body>
+    <h1> Mystery portal<br>Victor Sterling</h1>
+    
+    <div class="button-container">
+        <a href="newspaper.png" target="_blank" class="image-button">
+            <img src="news.png" alt="News" width="180" height="180"> <!-- Specify the size here -->
+        </a>
+        <a href="security_access_logs.html" target="_blank" class="image-button">
+            <img src="security.png" alt="Will" width="180" height="180"> <!-- Specify the size here -->
+        </a>
+    </div>
 
-<h1>DETECTIVE DATABASE<br>Case: Victor Sterling</h1>
+    <div class="button-container">
+        <a href="investigator_notes.html" target="_blank" class="image-button">
+            <img src="detective.png" alt="Detective" width="180" height="200"> 
+        </a>
+        <a href="confidential_confessions.html" target="_blank" class="image-button">
+            <img src="interrogate.png" alt="Interrogate"  width="180" height="200">
+        </a>
+        <a href="Autopsy_report.html" target="_blank" class="image-button">
+            <img src="report.png" alt="Interrogate"  width="180" height="200">
+        </a>
+    </div>
 
+    <!-- Password Protected Button -->
+    <button class="info normal-button" onclick="checkPassword()">
+        Lets Start
+    </button>
 
-<div class="dashboard">
+    <script>
+        function checkPassword() {
+            var password = prompt("Enter Password:");
 
-<a href="newspaper.png" target="_blank" class="card">
-<img src="news.png" alt="News">
-<p>Newspaper Evidence</p>
-</a>
-
-
-<a href="security_access_logs.html" target="_blank" class="card">
-<img src="security.png" alt="Security">
-<p>Security Logs</p>
-</a>
-
-
-<a href="investigator_notes.html" target="_blank" class="card">
-<img src="detective.png" alt="Detective">
-<p>Investigator Notes</p>
-</a>
-
-
-<a href="confidential_confessions.html" target="_blank" class="card">
-<img src="interrogate.png" alt="Interrogate">
-<p>Suspect Confessions</p>
-</a>
-
-
-<a href="Autopsy_report.html" target="_blank" class="card">
-<img src="report.png" alt="Report">
-<p>Autopsy Report</p>
-</a>
-
-</div>
-
-
-
-<button class="start-btn" onclick="checkPassword()">
-ACCESS FINAL FILE
-</button>
-
-
-<div class="footer">
-CLASSIFIED POLICE DATABASE
-</div>
-
-
-<script>
-
-function checkPassword(){
-
-let password = prompt("Enter Investigator Password");
-
-if(password && password.toLowerCase() === "isabella cruz"){
-
-window.location.href="mystery.html";
-
-}
-
-else{
-
-alert("Access Denied");
-
-}
-
-}
-
-</script>
-
-
+            if (password === "lsabella cruz") {
+                window.location.href = "mystery.html";
+            } else {
+                alert("Incorrect Password!");
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
