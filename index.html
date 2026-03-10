@@ -57,11 +57,27 @@ background:orange;
 color:white;
 }
 
+/* FULLSCREEN VIEWER */
+
 #viewer{
-margin-top:25px;
-width:850px;
-height:500px;
-border:3px solid orange;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+z-index:999;
+display:none;
+}
+
+#closeViewer{
+position:absolute;
+top:15px;
+right:25px;
+font-size:30px;
+color:white;
+cursor:pointer;
+z-index:1000;
 }
 
 </style>
@@ -87,7 +103,6 @@ border:3px solid orange;
 </div>
 
 
-
 <div class="button-container">
 
 <a onclick="openFile('investigator_notes.html')" class="image-button">
@@ -105,29 +120,42 @@ border:3px solid orange;
 </div>
 
 
-
 <button class="info normal-button" onclick="startInvestigation()">
 Lets Start
 </button>
 
 
 <!-- Evidence Viewer -->
-<div id="viewer"></div>
+<div id="viewer">
+
+<span id="closeViewer" onclick="closeViewer()">✖</span>
+
+</div>
 
 
 
 <script>
 
-
-/* OPEN FILE INSIDE PORTAL */
+/* OPEN FILE FULLSCREEN */
 
 function openFile(file){
 
-document.getElementById("viewer").innerHTML =
-'<iframe src="'+file+'" width="100%" height="100%" style="border:none;"></iframe>';
+document.getElementById("viewer").style.display="block";
+
+document.getElementById("viewer").innerHTML +=
+'<iframe src="'+file+'" width="100%" height="100%" style="border:none;background:white;"></iframe>';
 
 }
 
+
+/* CLOSE VIEWER */
+
+function closeViewer(){
+
+document.getElementById("viewer").style.display="none";
+document.getElementById("viewer").innerHTML='<span id="closeViewer" onclick="closeViewer()">✖</span>';
+
+}
 
 
 /* START INVESTIGATION */
@@ -138,7 +166,6 @@ startFullscreen();
 checkPassword();
 
 }
-
 
 
 /* FULLSCREEN MODE */
@@ -152,7 +179,6 @@ elem.requestFullscreen();
 }
 
 }
-
 
 
 /* PASSWORD CLUE SYSTEM */
@@ -179,7 +205,7 @@ let password=prompt(message + "\n\nEnter Password:");
 
 if(password && password.trim().toLowerCase()==="isabella cruz"){
 
-window.location.href="mystery.html";
+window.location.replace("mystery.html");
 
 }
 
@@ -192,8 +218,7 @@ alert("Incorrect Password!");
 }
 
 
-
-/* MESSAGE ROTATION EVERY 5 MINUTES */
+/* MESSAGE ROTATION */
 
 setInterval(function(){
 
@@ -204,7 +229,6 @@ index=0;
 }
 
 },300000);
-
 
 
 /* TAB SWITCH DETECTION */
@@ -222,7 +246,6 @@ window.location.href="about:blank";
 });
 
 
-
 /* DISABLE RIGHT CLICK */
 
 document.addEventListener("contextmenu",function(e){
@@ -230,8 +253,7 @@ e.preventDefault();
 });
 
 
-
-/* BLOCK SOME KEYS */
+/* BLOCK INSPECT KEYS */
 
 document.addEventListener("keydown",function(e){
 
